@@ -1,0 +1,61 @@
+@use "sass:math";
+
+/**
+  Functions to create responsive font-sizes. From https://css-tricks.com/snippets/css/fluid-typography/
+ */
+@function strip-unit($value) {
+  @return math.div($value, ($value * 0 + 1));
+}
+
+@mixin fluid-type($min-font-size, $max-font-size) {
+  $min-vw: 320px;
+  $max-vw: 2560px;
+  $u1: math.unit($min-vw);
+  $u2: math.unit($max-vw);
+  $u3: math.unit($min-font-size);
+  $u4: math.unit($max-font-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      font-size: $min-font-size;
+      @media screen and (min-width: $min-vw) {
+        font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+      }
+      @media screen and (min-width: $max-vw) {
+        font-size: $max-font-size;
+      }
+    }
+  }
+}
+
+h1 {
+  line-height: 1.35em;
+  @include fluid-type(50px, 120px);
+}
+
+h2 {
+  line-height: 1.05em;
+  @include fluid-type(30px, 60px);
+}
+
+h3 {
+  line-height: 1.05em;
+  @include fluid-type(20px, 30px);
+}
+
+p {
+  color: rgb(117, 117, 117);
+  @include fluid-type(16px, 20px);
+}
+
+.text-subtitle {
+  line-height: 1.4em;
+  font-weight: bold;
+  @include fluid-type(20px, 50px);
+}
+
+.text-lead {
+  line-height: 1.4em;
+  font-weight: bold;
+  @include fluid-type(20px, 50px);
+}
