@@ -101,6 +101,6 @@ export function getPaymentProviderUrl(): string {
   }
 
   throw new Error(
-    `Payment Provider ${paymentProvider} not supported by Soundcrowd!`,
+    `Payment Provider ${paymentProvider} not supported!`,
   )
 }
