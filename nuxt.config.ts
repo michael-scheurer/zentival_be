@@ -8,12 +8,12 @@ export default defineNuxtConfig({
       meta: [
         {
           name: 'description',
-          content: 'Zentival - Träum weiter!',
+          content: 'Zentival - Abtouche!',
         },
         // open graph
         {
           property: 'og:title',
-          content: 'Zentival - Träum weiter!',
+          content: 'Zentival - Abtouche!',
         },
         {
           property: 'og:description',
@@ -39,7 +39,7 @@ export default defineNuxtConfig({
         { name: 'twitter:card', content: 'summary' },
         {
           name: 'twitter:title',
-          content: 'Zentival - Träum weiter!',
+          content: 'Zentival - Abtouche!',
         },
         {
           name: 'twitter:description',
