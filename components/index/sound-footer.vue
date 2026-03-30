@@ -12,7 +12,7 @@
             Verein Zentival <br />
             Zentweg 30 <br />
             3006 Bern <br />
-            zentival@burgfeld.ch
+            post@zentival.be
           </p>
         </v-col>
         <v-col class="v-col-auto text-right pr-0">
