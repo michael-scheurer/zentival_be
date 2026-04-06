@@ -80,6 +80,8 @@ export default defineNuxtConfig({
   runtimeConfig: {
     mollieApiKey: process.env.NUXT_MOLLIE_API_KEY,
     stripeApiKey: process.env.NUXT_STRIPE_API_KEY,
+    idealPaymentApiKey: process.env.NUXT_IDEAL_PAYMENT_API_KEY,
+    idealPaymentInstance: process.env.NUXT_IDEAL_PAYMENT_INSTANCE,
     public: {
       paymentProvider: process.env.NUXT_PUBLIC_PAYMENT_PROVIDER,
     },

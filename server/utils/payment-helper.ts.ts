@@ -1,7 +1,7 @@
 import type { H3Event } from 'h3'
 import type Stripe from 'stripe'
 
-export type PaymentProvider = 'stripe' | 'mollie'
+export type PaymentProvider = 'stripe' | 'mollie' | 'idealpayment'
 
 export interface TotalAmount {
   error?: string
@@ -98,6 +98,9 @@ export function getPaymentProviderUrl(): string {
   }
   if (paymentProvider === 'mollie') {
     return `${baseUrl}/mollie/payments`
+  }
+  if (paymentProvider === 'idealpayment') {
+    return `${baseUrl}/idealpayment/payments`
   }
 
   throw new Error(
