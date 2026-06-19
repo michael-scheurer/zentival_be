@@ -100,7 +100,5 @@ export function getPaymentProviderUrl(): string {
     return `${baseUrl}/mollie/payments`
   }
 
-  throw new Error(
-    `Payment Provider ${paymentProvider} not supported!`,
-  )
+  throw new Error(`Payment Provider ${paymentProvider} not supported!`)
 }

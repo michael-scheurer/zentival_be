@@ -8,6 +8,7 @@
   import sethSchwarz from '@/assets/img/acts/sethSchwarz.webp'
   import stevo from '@/assets/img/acts/stevo.webp'
   import nemie from '@/assets/img/acts/nemie.webp'
+  import hindStag from '@/assets/img/acts/hindStag.webp'
 
   import type { Act } from '~/types/schema'
 
@@ -28,6 +29,7 @@
     sethSchwarz,
     stevo,
     nemie,
+    hindStag,
   }
 
   function getSrc(image: string): string | undefined {
@@ -128,7 +130,10 @@
           </v-card>
         </v-col>
         <v-col class="v-col-6 hidden-md-and-down">
-          <div v-html="act.radioHtmlCode" />
+          <div v-if="act.radioHtmlCode" v-html="act.radioHtmlCode" />
+          <div v-else class="bg-black pa-16" style="border-radius: 12px">
+            <p class="text-white">{{ act.long_description }}</p>
+          </div>
         </v-col>
       </v-row>
     </v-col>
@@ -156,7 +161,11 @@
         </v-col>
       </v-row>
       <!-- player -->
-      <div class="hidden-lg-and-up pt-6" v-html="selectedAct.radioHtmlCode" />
+      <div
+        v-if="selectedAct.radioHtmlCode"
+        class="hidden-lg-and-up pt-6"
+        v-html="selectedAct.radioHtmlCode"
+      />
 
       <!-- bio text -->
       <p class="pt-6">
