@@ -43,7 +43,9 @@ export default defineEventHandler(
       }
 
       // Amount from Payrexx API is in cents, convert to whole CHF
-      totalAmount = Math.round(totalAmount / 100)
+      totalAmount =
+        Math.round(totalAmount / 100) +
+        (new Date().getFullYear() === 2026 ? 80 : 0) // manually add 85 chf from mollie in 2026
 
       return {
         totalAmount,
