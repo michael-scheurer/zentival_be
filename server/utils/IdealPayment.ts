@@ -7,10 +7,12 @@ export default class IdealPayment {
     const runtimeConfig = useRuntimeConfig()
     this.apiKey = runtimeConfig.idealPaymentApiKey as string
     this.instance = runtimeConfig.idealPaymentInstance as string
-    this.baseUrl = 'https://api.payrexx.com/v1.14'
+    this.baseUrl = 'https://api.ideal-pay.ch/v1.0'
   }
 
-  public async getTransactions(params: Record<string, string | number> = {}): Promise<any> {
+  public async getTransactions(
+    params: Record<string, string | number> = {},
+  ): Promise<any> {
     const queryParams = new URLSearchParams({
       instance: this.instance,
       ...Object.fromEntries(
@@ -24,7 +26,7 @@ export default class IdealPayment {
     const response = await fetch(url, {
       method: 'GET',
       headers: {
-        'Accept': 'application/json',
+        Accept: 'application/json',
         'X-API-KEY': this.apiKey,
       },
     })
@@ -33,9 +35,10 @@ export default class IdealPayment {
       return response.json()
     }
 
-    console.log(response)
+    const body = await response.text()
+    console.error(`Payrexx API error ${response.status} for ${url}: ${body}`)
     throw new Error(
-      `IdealPayment API answered with status code ${response.status}. Check Logs for more information`,
+      `Payrexx API answered with status code ${response.status}: ${body}`,
     )
   }
 }
