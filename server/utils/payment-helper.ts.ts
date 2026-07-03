@@ -103,7 +103,5 @@ export function getPaymentProviderUrl(): string {
     return `${baseUrl}/idealpayment/payments`
   }
 
-  throw new Error(
-    `Payment Provider ${paymentProvider} not supported!`,
-  )
+  throw new Error(`Payment Provider ${paymentProvider} not supported!`)
 }

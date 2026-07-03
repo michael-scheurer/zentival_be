@@ -103,6 +103,14 @@ export function useActs() {
       image: 'stevo',
       radioHtmlCode: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/6gbEfMzGr0anNu4sKlXZye?theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`,
     },
+    {
+      id: 'hind-stag-2026',
+      year: 2026,
+      title: 'Hind & Stag',
+      long_description: `Hind & Stag ein musikalisches Duo, das seine gemeinsame Leidenschaft für Musik lebt. soulig-warme und gefühlvolle Stimmen, Tiefe und Authentizität. Gemeinsam erschaffen sie einen Klang zwischen Jazz, Singer-Songwriter und Folk. Ihre Songs erzählen von den Höhen und Tiefen ihrer Beziehung, von Lebenswegen, Sehnsucht, Veränderungen und den Geschichten, die das Leben schreibt.
+Besonders prägend für ihre Musik waren gemeinsame Reisen durch Mosambik und Malawi. Die Begegnungen, Landschaften und musikalischen Eindrücke dieser Zeit haben ihre Musik nachhaltig beeinflusst und finden ihren Weg in ihre Kompositionen.`,
+      image: 'hindStag',
+    },
     // {
     //   id: 'nemie-2026',
     //   year: 2026,

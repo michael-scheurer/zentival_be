@@ -4,5 +4,5 @@ export type Act = {
   image?: string | null
   long_description?: unknown | null
   title?: string | null
-  radioHtmlCode: string
+  radioHtmlCode?: string
 }
