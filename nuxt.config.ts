@@ -96,6 +96,14 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxt/eslint',
   ],
+
+  // wrong invitations sent by simon b. 2026. can be removed after 2026.
+  routeRules: {
+    '/m': {
+      redirect: '/',
+    },
+  },
+
   eslint: {
     // options here
   },
